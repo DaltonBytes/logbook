@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flight Weather Logbook</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <script src="scripts/app.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <div class="flight">
@@ -17,17 +17,20 @@
         <input type="aircraft-type" id="aircraft-type" required />
         <label>Tail: </label>
         <input type="tail" id="tail" required />
-        <label>Departure: </label>
+        <label>Departure Time: </label>
+        <input type="time" id="departure" required />
+        <label>Departure ICAO: </label>
         <input type="departure" id="departure" required />
-        <label>Arrival: </label>
+        <label>Arrival Time: </label>
+        <input type="time" id="arrival" required />
+        <label>Arrival ICAO: </label>
         <input type="arrival" id="arrival" required />
-        <label>Flight Time: </label>
-        <input type"flight-time" id ="flight-time" required />
         <button type="submit">Add Flight</button>
       </form>
     </div>
     <div class="flight-list">
       <h3>Flight Log</h3>
-      </div>
+      <div class="flight-table"></div>
+    </div>
   </body>
 </html>
