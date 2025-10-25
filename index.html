@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Weather Logbook</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="scripts/app.js" type="module"></script>
+  </head>
+  <body>
+    <div class="flight">
+      <h3>Add Flight</h3>
+      <form id="flight-form">
+        <label>Date: </label>
+        <input type="date" id="date" required />
+        <label>Aircraft Type: </label>
+        <input type="aircraft-type" id="aircraft-type" required />
+        <label>Tail: </label>
+        <input type="tail" id="tail" required />
+        <label>Departure: </label>
+        <input type="departure" id="departure" required />
+        <label>Arrival: </label>
+        <input type="arrival" id="arrival" required />
+        <label>Flight Time: </label>
+        <input type"flight-time" id ="flight-time" required />
+        <button type="submit">Add Flight</button>
+      </form>
+    </div>
+    <div class="flight-list">
+      <h3>Flight Log</h3>
+      </div>
+  </body>
+</html>
