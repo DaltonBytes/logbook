@@ -4,3 +4,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#flight-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 200px;
+  padding: 20px;
+}

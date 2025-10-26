@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flight Weather Logbook</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="flight">
@@ -14,23 +14,43 @@
         <label>Date: </label>
         <input type="date" id="date" required />
         <label>Aircraft Type: </label>
-        <input type="aircraft-type" id="aircraft-type" required />
-        <label>Tail: </label>
-        <input type="tail" id="tail" required />
+        <input type="text" id="aircraft-type" required />
+        <label>Tail Number: </label>
+        <input type="text" id="tail" required />
         <label>Departure Time: </label>
-        <input type="time" id="departure" required />
+        <input type="time" id="departure-time" required />
         <label>Departure ICAO: </label>
-        <input type="departure" id="departure" required />
+        <input type="text" id="departure-icao" required />
         <label>Arrival Time: </label>
-        <input type="time" id="arrival" required />
+        <input type="time" id="arrival-time" required />
         <label>Arrival ICAO: </label>
-        <input type="arrival" id="arrival" required />
+        <input type="text" id="arrival-icao" required />
+        <label>Takeoff Weather: </label>
+        <input type="text" id="takeoff-weather" />
+        <label>Landing Weather: </label>
+        <input type="text" id="landing-weather" />
         <button type="submit">Add Flight</button>
       </form>
     </div>
     <div class="flight-list">
       <h3>Flight Log</h3>
-      <div class="flight-table"></div>
+      <div class="table-container">
+        <table id="flightTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Aircraft Type</th>
+              <th>Tail Number</th>
+              <th>Departure ICAO</th>
+              <th>Arrival ICAO</th>
+              <th>Total Flight Time</th>
+              <th>Takeoff Weather</th>
+              <th>Landing Weather</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
