@@ -1,6 +1,12 @@
 console.log("Log your flight!");
 
-//add a flight to the array
+const toggle = document.getElementById("theme-toggle");
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  toggle.textContent = document.body.classList.contains("dark")
+    ? "Light Mode"
+    : "Dark Mode";
+});
 
 const flightLog = (() => {
   const flightList = [];
@@ -63,7 +69,6 @@ flightLog.addFlight(
 );
 console.log(flightLog.getFlights());
 
-// display all flights in a table format
 function displayFlights() {
   const tableBody = document.getElementById("table-body");
   tableBody.innerText = "";
@@ -83,6 +88,41 @@ function displayFlights() {
   });
 }
 
-displayFlights();
-// get weather data for takeoff and landing
+function submitNewFlight(event) {
+  event.preventDefault();
+
+  const date = document.querySelector("#date").value;
+  const aircraftType = document.querySelector("#aircraft-type").value;
+  const tail = document.querySelector("#tail").value;
+  const depTime = document.querySelector("#departure-time").value;
+  const depICAO = document.querySelector("#departure-icao").value;
+  const arrTime = document.querySelector("#arrival-time").value;
+  const arrICAO = document.querySelector("#arrival-icao").value;
+  const takeoffWx = document.querySelector("#takeoff-weather").value;
+  const landingWx = document.querySelector("#landing-weather").value;
+
+  flightLog.addFlight(
+    date,
+    aircraftType,
+    tail,
+    depTime,
+    depICAO,
+    arrTime,
+    arrICAO,
+    takeoffWx,
+    landingWx,
+  );
+  console.log("added flight");
+
+  displayFlights();
+
+  event.target.reset();
+}
+
+document
+  .getElementById("flight-form")
+  .addEventListener("submit", submitNewFlight);
+
 function getWeatherData() {}
+
+displayFlights();
